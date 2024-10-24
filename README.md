@@ -1,6 +1,6 @@
-# Nome do Projeto
+# Nginx Node.js API com RabbitMQ
 
-Uma breve descrição do projeto, suas funcionalidades e objetivos.
+Este projeto consiste em uma aplicação que utiliza Nginx como servidor web reverso, Node.js para a API e RabbitMQ para gerenciamento de filas de mensagens. A aplicação é containerizada usando Docker, facilitando a instalação e o uso.
 
 ## Índice
 
@@ -14,7 +14,7 @@ Uma breve descrição do projeto, suas funcionalidades e objetivos.
 
 ## Sobre
 
-Descreva aqui o que seu projeto faz, como ele pode ser útil e quais problemas ele resolve.
+Este projeto utiliza Docker para subir as aplicações, onde a API possui um endpoint `/api/reset-password` que envia uma mensagem para uma fila no RabbitMQ, simulando uma solicitação de redefinição de senha. 
 
 ## Tecnologias
 
@@ -24,7 +24,7 @@ Este projeto utiliza as seguintes tecnologias:
 - **Express**: Framework para a construção da API.
 - **RabbitMQ**: Sistema de gerenciamento de filas de mensagens.
 - **Docker**: Para containerização da aplicação.
-- **Nginx**: Como servidor web reverso (se aplicável).
+- **Nginx**: Como servidor web reverso.
 
 ## Pré-requisitos
 
@@ -40,7 +40,7 @@ Siga os passos abaixo para executar o projeto localmente.
 1. Clone o repositório:
 
     ```bash
-    https://github.com/brunopautz/test-docker.git
+    git clone git@github.com:brunopautz/test-docker.git
     ```
 
 2. Navegue até o diretório do projeto:
@@ -49,10 +49,10 @@ Siga os passos abaixo para executar o projeto localmente.
     cd test-docker
     ```
 
-3. Execute o seguinte comando para construir e iniciar os contêineres:
+3. Execute o seguinte comando para construir e iniciar os contêineres em segundo plano:
 
     ```bash
-    docker-compose up --build
+    docker-compose up -d --build
     ```
 
 4. Execute o seguinte comando para derrubar os contêineres:
@@ -81,4 +81,3 @@ Credenciais padrão:
 ## Licença
 
 Este projeto está licenciado sob a [Licença MIT](LICENSE).
-
